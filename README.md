@@ -36,3 +36,9 @@ composer install
 npm install
 php artisan serve
 ```
+
+## URL's
+
+- formulario/create -> formBuilder
+- formIO -> form.io
+- / -> formBuilder sem create

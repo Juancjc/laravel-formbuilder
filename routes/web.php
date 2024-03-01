@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ForumularioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('formulario', ForumularioController::class);
+
 Route::get('/formIO', function () {
     return view('formIO');
 });

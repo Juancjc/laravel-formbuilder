@@ -10,7 +10,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Styles -->
     <style>
         /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
@@ -851,6 +851,7 @@
                 float: right;
             }
     </style>
+
 </head>
 
 <body class="antialiased">
@@ -875,6 +876,39 @@
             var $fbEditor = $(document.getElementById('fb-editor')),
                 $formContainer = $(document.getElementById('fb-rendered-form')),
                 fbOptions = {
+                    inputSets: [{
+                            label: 'Endereço',
+                            name: 'endereco', // optional - one will be generated from the label if name not supplied
+                            showHeader: true,
+                            icon: '<i class="fa fa-address-book"></i>', // optional - Use the label as the header for this set of inputs
+                            fields: [{
+                                    type: 'text',
+                                    label: 'Rua',
+                                    className: 'form-control row-1 col-md-3',
+                                    "name":"rua-endereco",
+                                },
+                                {
+                                    type: 'text',
+                                    label: 'Bairro',
+                                    className: 'form-control row-1 col-md-3',
+                                    "name":"bairro-endereco",
+
+                                },
+                                {
+                                    type: 'number',
+                                    label: 'Número',
+                                    className: 'form-control row-1 col-md-3',
+                                    "name":"numero-endereco",
+                                },
+                                {
+                                    type: 'text',
+                                    label: 'CEP',
+                                    className: 'form-control row-1 col-md-3',
+                                    "name":"cep-endereco",
+                                }
+                            ]
+                        }
+                    ],
                     controlPosition: 'left',
                     onSave: function() {
                         $fbEditor.toggle();
@@ -891,7 +925,6 @@
                 console.log(formBuilder.actions.getData('json'));
             });
         });
-
     </script>
 </body>
 
